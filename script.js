@@ -1,6 +1,14 @@
 const container = document.getElementById('container');
 const button = document.querySelector('button');
 
+function randNum(n) {
+    return random = Math.floor(Math.random() * n);
+}
+
+function rgbGen() {
+    return `rgb(${randNum(256)}, ${randNum(256)}, ${randNum(256)})`;
+}
+
 function gridGen(n = 16) {
     let gridList = document.querySelectorAll('.grid');
     gridList.forEach( (node) => {
@@ -15,7 +23,7 @@ function gridGen(n = 16) {
         newDiv.style.height = `calc(90vh / ${n})`;
     
         newDiv.addEventListener('mouseover', (event) => {
-            event.target.style.backgroundColor = "aqua";
+            event.target.style.backgroundColor = rgbGen();
         });
     }
 }
